@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>News Scraper</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Latest News Headlines</h1>
+        <ul>
+            {% for item in news_data %}
+                <li>
+                    <a href="{{ item.url }}" target="_blank" rel="noopener noreferrer">
+                        {{ item.text }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
